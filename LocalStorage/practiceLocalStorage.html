@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+// methos localStorage.setItem
+// method localStorage.getItem
+
+// Simple store value in Local Storage 
+
+
+     localStorage.setItem('name', 'veer')
+     localStorage.setItem('name1', 'asur')
+     console.log(localStorage.getItem('name')); 
+     console.log(localStorage)
+
+
+// how to store object in local storage
+
+    var myObj = {
+        name: 'veer',
+        age: 5,
+        city: 'bhilai'
+    }
+
+    // convert object in string using JSON.stringfy 
+    let myObj_serialized = JSON.stringify(myObj)
+
+
+//   restore the myObj as myObj_serialized ( jisko string me convert kiye hai)
+    localStorage.setItem('myObj', myObj_serialized);
+    console.log(myObj_serialized);  // check what changes done 
+
+//   destructuring the myObj_serialized data or value to access proper value  
+    myObj_deserialized = JSON.parse(localStorage.getItem('myObj'));
+    console.log(myObj_deserialized);   // check what changes done 
+    
+    
+    </script>
+    
+</body>
+</html>
